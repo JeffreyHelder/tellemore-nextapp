@@ -4,7 +4,11 @@ import Image from "next/image";
 import logo from "../public/logo.png";
 import Link from "next/link";
 
-const Header = () => (
+type HeaderProps = {
+  toggleTheme: () => void;
+};
+
+const Header = ({ toggleTheme }: HeaderProps) => (
   <header>
     <div>
       <Image src={logo} alt="basic teal circle logo" />
@@ -21,6 +25,9 @@ const Header = () => (
         ))}
       </ul>
     </nav>
+    <button type="button" onClick={toggleTheme}>
+      Switch Theme
+    </button>
   </header>
 );
 

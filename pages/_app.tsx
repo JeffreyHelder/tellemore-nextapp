@@ -4,6 +4,7 @@ import type { AppProps } from "next/app";
 import { useState } from "react";
 import "../styles/normalize.css";
 import "../styles/global.css";
+import Layout from "../components/Layout";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [theme, setTheme] = useState("light");
@@ -12,10 +13,9 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <ThemeProvider theme={theme == "light" ? lightTheme : darkTheme}>
-      <button type="button" onClick={toggleTheme}>
-        Switch Theme
-      </button>
-      <Component {...pageProps} toggleTheme={toggleTheme} />
+      <Layout toggleTheme={() => toggleTheme()}>
+        <Component {...pageProps} toggleTheme={toggleTheme} />
+      </Layout>
     </ThemeProvider>
   );
 }
