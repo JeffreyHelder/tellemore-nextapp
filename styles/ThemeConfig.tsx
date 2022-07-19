@@ -4,21 +4,32 @@ const COMMON = {
     md: 850,
     lg: 1240,
     xl: 1640
+  },
+  palette: {
+    primary: "#1BE39B",
+    blue: "#00F0FF",
+    purple: "#9A0DF0",
+    white: "#FFFFFF",
+    black: "#070C09"
   }
 };
 
 export const lightTheme = {
-  body: "#FFF",
-  text: "#363537",
-  toggleBorder: "#FFF",
-  background: "#363537",
-  breakpoints: COMMON
+  palette: {
+    background: "#FFFFFF",
+    paper: "#FFFFFF",
+    text: "#2C3733",
+    ...COMMON.palette
+  },
+  breakpoints: COMMON.breakpoints
 };
 
 export const darkTheme = {
-  body: "#363537",
-  text: "#FAFAFA",
-  toggleBorder: "#6B8096",
-  background: "#999",
+  palette: {
+    background: "#1B211E",
+    paper: "#2C3733",
+    text: "#FFFFFF",
+    ...COMMON.palette
+  },
   breakpoints: COMMON.breakpoints
 };
