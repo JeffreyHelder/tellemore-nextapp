@@ -16,7 +16,8 @@ const Home: NextPage = () => {
       <Helmet title="Tellemore | Home" description="Jeffrey Helder, a.k.a. Tellemore's website." />
       <Header />
       <main>
-        <h1>This is Homepage</h1>
+        <h1>tellemore.tech</h1>
+        <h3>building your web solutions.</h3>
       </main>
     </div>
   );
