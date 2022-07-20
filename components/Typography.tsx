@@ -207,7 +207,8 @@ export const defaultVariantMapping: { [key in TypographyType]: any } = {
   Tiny: Tiny
 };
 
-const Typography = (props: TypographyProps) => {
+// eslint-disable-next-line react/display-name
+const Typography = React.forwardRef((props: TypographyProps, ref) => {
   const StyledComponent = props.as || defaultVariantMapping[props.type];
 
   return (
@@ -215,6 +216,6 @@ const Typography = (props: TypographyProps) => {
       {props.children}
     </StyledComponent>
   );
-};
+});
 
 export default Typography;

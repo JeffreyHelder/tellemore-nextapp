@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <ThemeProvider theme={theme == "light" ? lightTheme : darkTheme}>
-      <Layout toggleTheme={() => toggleTheme()}>
+      <Layout themeMode={theme} toggleTheme={() => toggleTheme()}>
         <Component {...pageProps} toggleTheme={toggleTheme} />
       </Layout>
     </ThemeProvider>
