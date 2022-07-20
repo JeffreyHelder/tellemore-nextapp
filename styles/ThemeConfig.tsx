@@ -1,7 +1,7 @@
 const COMMON = {
   breakpoints: {
     sm: 550,
-    md: 850,
+    md: 840,
     lg: 1240,
     xl: 1640
   },

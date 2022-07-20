@@ -4,12 +4,12 @@ import Header from "./Header";
 type LayoutProps = {
   children: any;
   toggleTheme: () => void;
-  themeMode: string;
+  lightMode: boolean;
 };
 
-const Layout = ({ children, toggleTheme, themeMode }: LayoutProps) => (
+const Layout = ({ children, toggleTheme, lightMode }: LayoutProps) => (
   <>
-    <Header themeMode={themeMode} toggleTheme={() => toggleTheme()} />
+    <Header lightMode={lightMode} toggleTheme={() => toggleTheme()} />
     <main>{children}</main>
   </>
 );

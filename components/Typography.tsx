@@ -24,7 +24,7 @@ export type TypographyType =
   | "Tiny";
 
 const SiteTitle = styled.h1(({ theme }) => ({
-  color: theme.text,
+  color: theme.palette.text,
   lineHeight: 1,
   letterSpacing: "2px",
   fontSize: "32px",
@@ -46,7 +46,7 @@ const SiteTitle = styled.h1(({ theme }) => ({
 }));
 
 const SiteTagline = styled.h3(({ theme }) => ({
-  color: theme.text,
+  color: theme.palette.text,
   lineHeight: 1,
   letterSpacing: "0.96px",
   fontSize: "16px",
@@ -68,7 +68,7 @@ const SiteTagline = styled.h3(({ theme }) => ({
 }));
 
 const SectionTitle = styled.h3(({ theme }) => ({
-  color: theme.text,
+  color: theme.palette.text,
   lineHeight: 1,
   letterSpacing: "1.44px",
   fontSize: "24px",
@@ -82,7 +82,7 @@ const SectionTitle = styled.h3(({ theme }) => ({
 }));
 
 const SectionBody = styled.p(({ theme }) => ({
-  color: theme.text,
+  color: theme.palette.text,
   lineHeight: 1,
   letterSpacing: "0.84px",
   fontSize: "14px",
@@ -97,7 +97,7 @@ const SectionBody = styled.p(({ theme }) => ({
 }));
 
 const CardButton = styled.h3(({ theme }) => ({
-  color: theme.text,
+  color: theme.palette.text,
   lineHeight: 1,
   letterSpacing: "0.84px",
   fontSize: "14px",
@@ -107,7 +107,7 @@ const CardButton = styled.h3(({ theme }) => ({
 }));
 
 const CardName = styled.h3(({ theme }) => ({
-  color: theme.text,
+  color: theme.palette.text,
   lineHeight: 1,
   letterSpacing: "1.68px",
   fontSize: "28px",
@@ -121,7 +121,7 @@ const CardName = styled.h3(({ theme }) => ({
 }));
 
 const CardTitle = styled.h3(({ theme }) => ({
-  color: theme.text,
+  color: theme.palette.text,
   lineHeight: 1,
   letterSpacing: "0.84px",
   fontSize: "14px",
@@ -134,22 +134,28 @@ const CardTitle = styled.h3(({ theme }) => ({
   }
 }));
 
-const NavCopy = styled.h3(({ theme }) => ({
-  color: theme.text,
+const NavCopy = styled.a(({ theme }) => ({
+  color: theme.palette.text,
   lineHeight: 1,
   letterSpacing: "1.44px",
   fontSize: "24px",
   fontWeight: "500",
   margin: 0,
   padding: 0,
-  "@media screen and (min-width: 550px)": {
+  "&.active": {
+    color: theme.palette.primary
+  },
+  "&:hover": {
+    opacity: ".75"
+  },
+  "@media screen and (min-width: 840px)": {
     letterSpacing: "1.2px",
     fontSize: "20px"
   }
 }));
 
 const LogoCopy = styled.h3(({ theme }) => ({
-  color: theme.text,
+  color: theme.palette.text,
   lineHeight: 1,
   letterSpacing: "0.9px",
   fontSize: "15px",
@@ -163,7 +169,7 @@ const LogoCopy = styled.h3(({ theme }) => ({
 }));
 
 const Subtitle = styled.h3(({ theme }) => ({
-  color: theme.text,
+  color: theme.palette.text,
   lineHeight: 1,
   letterSpacing: "0.94px",
   fontSize: "18px",
@@ -173,7 +179,7 @@ const Subtitle = styled.h3(({ theme }) => ({
 }));
 
 const Body = styled.h3(({ theme }) => ({
-  color: theme.text,
+  color: theme.palette.text,
   lineHeight: 1,
   letterSpacing: "0.84px",
   fontSize: "14px",
@@ -183,7 +189,7 @@ const Body = styled.h3(({ theme }) => ({
 }));
 
 const Tiny = styled.h3(({ theme }) => ({
-  color: theme.text,
+  color: theme.palette.text,
   lineHeight: 1,
   letterSpacing: "0.6px",
   fontSize: "10px",
