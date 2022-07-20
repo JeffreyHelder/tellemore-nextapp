@@ -35,10 +35,6 @@ const SiteTitle = styled.h1(({ theme }) => ({
     letterSpacing: "0.4vw",
     fontSize: "8vw"
   },
-  "@media screen and (min-width: 1240px)": {
-    letterSpacing: "0.35vw",
-    fontSize: "7vw"
-  },
   "@media screen and (min-width: 1640px)": {
     letterSpacing: "5.76px",
     fontSize: "96px"
@@ -56,10 +52,6 @@ const SiteTagline = styled.h3(({ theme }) => ({
   "@media screen and (min-width: 550px)": {
     letterSpacing: "0.125vw",
     fontSize: "2.5vw"
-  },
-  "@media screen and (min-width: 1240px)": {
-    letterSpacing: "0.12vw",
-    fontSize: "2.2vw"
   },
   "@media screen and (min-width: 1640px)": {
     letterSpacing: "1.92px",

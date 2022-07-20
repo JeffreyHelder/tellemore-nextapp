@@ -16,11 +16,20 @@ type HeaderProps = {
 const StyledHeader = styled.header(({ theme }) => ({
   display: "flex",
   flexDirection: "row",
+  position: "fixed",
+  top: 0,
+  left: 0,
   width: "calc(100vw - 80px)",
-  justifyContent: "space-between",
   padding: "20px 40px",
   background: rgba(theme.palette.background, 0.95),
   backdropFilter: "blur(12px)",
+  "& .header-inner-container": {
+    maxWidth: "1640px",
+    width: "100%",
+    margin: "auto",
+    display: "inline-flex",
+    justifyContent: "space-between"
+  },
   "& .tellemore-logo-container": {
     display: "flex",
     flexDirection: "row",
@@ -121,6 +130,7 @@ const Header = ({ toggleTheme, lightMode }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleRoute = (route: string) => {
+    setIsMenuOpen(false);
     router.push(route);
   };
 
@@ -140,54 +150,56 @@ const Header = ({ toggleTheme, lightMode }: HeaderProps) => {
 
   return (
     <StyledHeader>
-      <div onClick={() => handleRoute("/")} className="tellemore-logo-container">
-        <Image src={logo} alt="basic teal circle logo" />
-        <Typography type="LogoCopy">{BRAND_DATA.company}</Typography>
-      </div>
-      {isMobile ? (
-        <>
-          <span onClick={() => setIsMenuOpen(true)} className="mobile-menu material-symbols-outlined">
-            menu
-          </span>
-          {isMenuOpen && (
-            <>
-              <span onClick={() => setIsMenuOpen(false)} className="mobile-menu-backdrop" />
-              <span onClick={() => setIsMenuOpen(false)} className="mobile-menu mobile-menu-close material-symbols-outlined">
-                close
-              </span>
-              <div className="tellemore-mobile-menu-navigation-wrapper">
-                <nav className="tellemore-mobile-menu-navigation">
-                  <ul className="tellemore-mobile-menu-navigation_inner">
-                    {NAV_ITEMS.sort((a, b) => a.order - b.order).map(item => (
-                      <li key={item.slug} onClick={() => handleRoute(item.slug)}>
-                        <Typography type="Nav" className={router.pathname == item.slug ? "active" : ""}>
-                          {item.title}
-                        </Typography>
-                      </li>
-                    ))}
-                  </ul>
-                </nav>
-                <ThemeSwitch lightMode={lightMode} toggleTheme={toggleTheme} />
-              </div>
-            </>
-          )}
-        </>
-      ) : (
-        <div className="tellemore-navigation-wrapper">
-          <nav className="tellemore-navigation">
-            <ul className="tellemore-navigation_inner">
-              {NAV_ITEMS.sort((a, b) => a.order - b.order).map(item => (
-                <li key={item.slug} onClick={() => handleRoute(item.slug)}>
-                  <Typography type="Nav" className={router.pathname == item.slug ? "active" : ""}>
-                    {item.title}
-                  </Typography>
-                </li>
-              ))}
-            </ul>
-          </nav>
-          <ThemeSwitch lightMode={lightMode} toggleTheme={toggleTheme} />
+      <div className="header-inner-container">
+        <div onClick={() => handleRoute("/")} className="tellemore-logo-container">
+          <Image src={logo} alt="basic teal circle logo" />
+          <Typography type="LogoCopy">{BRAND_DATA.company}</Typography>
         </div>
-      )}
+        {isMobile ? (
+          <>
+            <span onClick={() => setIsMenuOpen(true)} className="mobile-menu material-symbols-outlined">
+              menu
+            </span>
+            {isMenuOpen && (
+              <>
+                <span onClick={() => setIsMenuOpen(false)} className="mobile-menu-backdrop" />
+                <span onClick={() => setIsMenuOpen(false)} className="mobile-menu mobile-menu-close material-symbols-outlined">
+                  close
+                </span>
+                <div className="tellemore-mobile-menu-navigation-wrapper">
+                  <nav className="tellemore-mobile-menu-navigation">
+                    <ul className="tellemore-mobile-menu-navigation_inner">
+                      {NAV_ITEMS.sort((a, b) => a.order - b.order).map(item => (
+                        <li key={item.slug} onClick={() => handleRoute(item.slug)}>
+                          <Typography type="Nav" className={router.pathname == item.slug ? "active" : ""}>
+                            {item.title}
+                          </Typography>
+                        </li>
+                      ))}
+                    </ul>
+                  </nav>
+                  <ThemeSwitch lightMode={lightMode} toggleTheme={toggleTheme} />
+                </div>
+              </>
+            )}
+          </>
+        ) : (
+          <div className="tellemore-navigation-wrapper">
+            <nav className="tellemore-navigation">
+              <ul className="tellemore-navigation_inner">
+                {NAV_ITEMS.sort((a, b) => a.order - b.order).map(item => (
+                  <li key={item.slug} onClick={() => handleRoute(item.slug)}>
+                    <Typography type="Nav" className={router.pathname == item.slug ? "active" : ""}>
+                      {item.title}
+                    </Typography>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+            <ThemeSwitch lightMode={lightMode} toggleTheme={toggleTheme} />
+          </div>
+        )}
+      </div>
     </StyledHeader>
   );
 };

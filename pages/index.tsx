@@ -1,14 +1,13 @@
 import type { NextPage } from "next";
 import Helmet from "../components/Head";
+import Typography from "../components/Typography";
 
 const Home: NextPage = () => (
-  <div>
+  <>
     <Helmet title="Tellemore | Home" description="Jeffrey Helder, a.k.a. Tellemore's website." />
-    <main>
-      <h1>tellemore.tech</h1>
-      <h3>building your web solutions.</h3>
-    </main>
-  </div>
+    <Typography type="SiteTitle">tellemore.tech</Typography>
+    <Typography type="SiteTagline">building your web solutions.</Typography>
+  </>
 );
 
 export default Home;

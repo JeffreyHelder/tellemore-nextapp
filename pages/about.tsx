@@ -1,12 +1,11 @@
 import type { NextPage } from "next";
 import Helmet from "../components/Head";
+import Typography from "../components/Typography";
 
 const About: NextPage = () => (
   <div>
     <Helmet title="Tellemore | About" description="About Jeffrey Helder, a.k.a. Tellemore." />
-    <main>
-      <h1>This is About page</h1>
-    </main>
+    <Typography type="SectionTitle">This is About page</Typography>
   </div>
 );
 
