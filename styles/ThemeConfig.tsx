@@ -17,7 +17,7 @@ const COMMON = {
 export const lightTheme = {
   palette: {
     background: "#FFFFFF",
-    paper: "#FFFFFF",
+    paper: "#DFFBF1",
     text: "#2C3733",
     ...COMMON.palette
   },

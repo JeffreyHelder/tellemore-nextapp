@@ -78,13 +78,13 @@ const SectionBody = styled.p(({ theme }) => ({
   lineHeight: 1,
   letterSpacing: "0.84px",
   fontSize: "14px",
-  fontWeight: "500",
+  fontWeight: "400",
   margin: 0,
   padding: 0,
   "@media screen and (min-width: 550px)": {
     letterSpacing: "1.44px",
     fontSize: "24px",
-    fontWeight: "400"
+    fontWeight: "300"
   }
 }));
 
@@ -177,7 +177,11 @@ const Body = styled.h3(({ theme }) => ({
   fontSize: "14px",
   fontWeight: "400",
   margin: 0,
-  padding: 0
+  padding: 0,
+  "@media screen and (min-width: 680px)": {
+    letterSpacing: "1.2px",
+    fontSize: "18px"
+  }
 }));
 
 const Tiny = styled.h3(({ theme }) => ({
