@@ -11,6 +11,7 @@ import { useRouter } from "next/router";
 type HeaderProps = {
   toggleTheme: () => void;
   lightMode: boolean;
+  isMobile: boolean;
 };
 
 const StyledHeader = styled.header(({ theme }) => ({
@@ -23,6 +24,7 @@ const StyledHeader = styled.header(({ theme }) => ({
   padding: "20px 40px",
   background: rgba(theme.palette.background, 0.95),
   backdropFilter: "blur(12px)",
+  zIndex: 1000,
   "& .header-inner-container": {
     maxWidth: "1640px",
     width: "100%",
@@ -64,7 +66,7 @@ const StyledHeader = styled.header(({ theme }) => ({
         listStyle: "none",
         padding: 0,
         display: "inline-flex",
-        "& >li>a": {
+        "& >li>p": {
           padding: "4px",
           cursor: "pointer"
         },
@@ -117,16 +119,15 @@ const StyledHeader = styled.header(({ theme }) => ({
       justifyContent: "center",
       marginBottom: "20px"
     },
-    "& >li>a": {
+    "& >li>p": {
       padding: "4px",
       cursor: "pointer"
     }
   }
 }));
 
-const Header = ({ toggleTheme, lightMode }: HeaderProps) => {
+const Header = ({ toggleTheme, lightMode, isMobile }: HeaderProps) => {
   const router = useRouter();
-  const [isMobile, setIsMobile] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleRoute = (route: string) => {
@@ -134,19 +135,12 @@ const Header = ({ toggleTheme, lightMode }: HeaderProps) => {
     router.push(route);
   };
 
-  const handleResize = () => {
-    if (window.innerWidth < 840) {
-      setIsMobile(true);
-    } else {
-      setIsMobile(false);
+  useEffect(() => {
+    if (!isMobile) {
       setIsMenuOpen(false);
     }
-  };
-
-  useEffect(() => {
-    handleResize();
-    window.addEventListener("resize", handleResize);
-  });
+    return;
+  }, [isMobile]);
 
   return (
     <StyledHeader>

@@ -88,18 +88,19 @@ const SectionBody = styled.p(({ theme }) => ({
   }
 }));
 
-const CardButton = styled.h3(({ theme }) => ({
-  color: theme.palette.text,
+const CardButton = styled.p(({ theme }) => ({
+  textDecoration: "none",
+  color: theme.palette.black,
   lineHeight: 1,
   letterSpacing: "0.84px",
   fontSize: "14px",
-  fontWeight: "500",
+  fontWeight: "600",
   margin: 0,
   padding: 0
 }));
 
 const CardName = styled.h3(({ theme }) => ({
-  color: theme.palette.text,
+  color: theme.palette.white,
   lineHeight: 1,
   letterSpacing: "1.68px",
   fontSize: "28px",
@@ -113,7 +114,7 @@ const CardName = styled.h3(({ theme }) => ({
 }));
 
 const CardTitle = styled.h3(({ theme }) => ({
-  color: theme.palette.text,
+  color: theme.palette.white,
   lineHeight: 1,
   letterSpacing: "0.84px",
   fontSize: "14px",
@@ -126,7 +127,7 @@ const CardTitle = styled.h3(({ theme }) => ({
   }
 }));
 
-const NavCopy = styled.a(({ theme }) => ({
+const NavCopy = styled.p(({ theme }) => ({
   color: theme.palette.text,
   lineHeight: 1,
   letterSpacing: "1.44px",

@@ -6,6 +6,7 @@ type LayoutProps = {
   children: any;
   toggleTheme: () => void;
   lightMode: boolean;
+  isMobile: boolean;
 };
 
 const MainStyle = styled.main(({ theme }) => ({
@@ -23,9 +24,9 @@ const MainStyle = styled.main(({ theme }) => ({
   }
 }));
 
-const Layout = ({ children, toggleTheme, lightMode }: LayoutProps) => (
+const Layout = ({ children, toggleTheme, lightMode, isMobile }: LayoutProps) => (
   <>
-    <Header lightMode={lightMode} toggleTheme={() => toggleTheme()} />
+    <Header isMobile={isMobile} lightMode={lightMode} toggleTheme={() => toggleTheme()} />
     <MainStyle>
       <div className="layout-inner-container">{children}</div>
     </MainStyle>

@@ -1,11 +1,11 @@
 import type { NextPage } from "next";
+import ContactCard from "../components/ContactCard";
 import Helmet from "../components/Head";
-import Typography from "../components/Typography";
 
-const Contact: NextPage = () => (
+const Contact: NextPage = ({ isMobile }: any) => (
   <div>
     <Helmet title="Tellemore | Contact" description="Jeffrey Helder's virtual contact card." />
-    <Typography type="SectionTitle">This is Contact page</Typography>
+    <ContactCard isMobile={isMobile} />
   </div>
 );
 
