@@ -9,8 +9,9 @@ const COMMON = {
     primary: "#1BE39B",
     blue: "#00F0FF",
     purple: "#9A0DF0",
+    yellow: "#FFC600",
     white: "#FFFFFF",
-    black: "#070C09"
+    black: "#252C28"
   }
 };
 

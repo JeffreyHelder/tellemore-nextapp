@@ -1,3 +1,21 @@
 * {
   font-family: "Advent Pro", sans-serif;
 }
+
+.slideIn {
+  animation: slideInAni 1.3s ease-in forwards;
+}
+@keyframes slideInAni {
+  0% {
+    opacity: 0;
+    margin-left: 100%;
+  }
+
+  30% {
+    opacity: 1;
+    margin-left: 0;
+  }
+
+  100% {
+  }
+}
