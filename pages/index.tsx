@@ -20,7 +20,7 @@ const CardContainer = styled.div(() => ({
   "& >div": {
     marginRight: "20px"
   },
-  "@media screen and (max-width: 540px)": {
+  "@media screen and (max-width: 680px)": {
     display: "block",
     marginTop: "40px",
     "& >div": {

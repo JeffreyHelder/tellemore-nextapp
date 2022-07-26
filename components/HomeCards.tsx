@@ -15,29 +15,30 @@ const HomeCardStyle = styled.div(({ theme }) => ({
   flexDirection: "column",
   alignItems: "center",
   justifyContent: "center",
-  height: "185px",
-  width: "190px",
+  height: "130px",
+  width: "135px",
   backgroundColor: `${rgba(theme.palette.paper, 0.35)}`,
   border: `1px solid ${rgba(theme.palette.primary, 1)}`,
   borderRadius: "8px",
   color: theme.palette.text,
   textAlign: "center",
   cursor: "pointer",
+  backdropFilter: "blur(8px)",
   transition: ".3s",
   "& >span": {
     marginTop: "20px",
-    fontSize: "80px"
+    fontSize: "55px"
   },
   "&:hover": {
     backgroundColor: theme.palette.paper,
     border: `1px solid ${rgba(theme.palette.primary, 0.5)}`
   },
-  "@media screen and (max-width: 680px)": {
-    height: "130px",
-    width: "135px",
+  "@media screen and (min-width: 680px)": {
+    height: "185px",
+    width: "190px",
     "& >span": {
       marginTop: "20px",
-      fontSize: "55px"
+      fontSize: "80px"
     }
   }
 }));
