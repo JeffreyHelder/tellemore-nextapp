@@ -1,6 +1,6 @@
 import * as React from "react";
 import Ripples from "react-ripples";
-import styled, { css, keyframes } from "styled-components";
+import styled from "styled-components";
 import rgba from "../styles/functions/rgba";
 import Typography from "./Typography";
 
@@ -12,7 +12,7 @@ type ButtonProps = {
   target: string;
 };
 
-const ButtonContainer = styled.div(({ theme }) => ({
+const ButtonContainer = styled.div(({}) => ({
   display: "flex",
   position: "relative",
   padding: 0,

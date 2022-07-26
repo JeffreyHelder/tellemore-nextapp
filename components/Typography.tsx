@@ -75,7 +75,7 @@ const SectionTitle = styled.h3(({ theme }) => ({
 
 const SectionBody = styled.p(({ theme }) => ({
   color: theme.palette.text,
-  lineHeight: 1,
+  lineHeight: 1.2,
   letterSpacing: "0.84px",
   fontSize: "14px",
   fontWeight: "400",
