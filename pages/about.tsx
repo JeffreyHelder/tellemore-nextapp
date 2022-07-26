@@ -5,7 +5,6 @@ import Helmet from "../components/Head";
 import SectionHeader from "../components/SectionHeader";
 import Typography from "../components/Typography";
 import AboutProfile from "../public/jeffrey.png";
-import AboutVideo from "../public/placeholder.png";
 
 const PageWrapper = styled.div(({}) => ({
   display: "flex",

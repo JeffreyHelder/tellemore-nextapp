@@ -14,6 +14,7 @@ const MainStyle = styled.main(({ theme }) => ({
   backgroundColor: theme.palette.background,
   paddingTop: "54px",
   minHeight: "calc(100vh - 54px)",
+  transition: ".35s",
   "& .layout-inner-container": {
     maxWidth: "1640px",
     margin: "auto"

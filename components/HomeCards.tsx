@@ -17,7 +17,7 @@ const HomeCardStyle = styled.div(({ theme }) => ({
   justifyContent: "center",
   height: "185px",
   width: "190px",
-  backgroundColor: `${rgba(theme.palette.paper, 0.5)}`,
+  backgroundColor: `${rgba(theme.palette.paper, 0.35)}`,
   border: `1px solid ${rgba(theme.palette.primary, 1)}`,
   borderRadius: "8px",
   color: theme.palette.text,

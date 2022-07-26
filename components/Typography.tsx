@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import styled from "styled-components";
 
 export type TypographyProps = {
@@ -31,6 +31,7 @@ const SiteTitle = styled.h1(({ theme }) => ({
   fontWeight: "600",
   margin: 0,
   padding: 0,
+  transition: ".35s",
   "@media screen and (min-width: 550px)": {
     letterSpacing: "0.4vw",
     fontSize: "8vw"
@@ -49,6 +50,7 @@ const SiteTagline = styled.h3(({ theme }) => ({
   fontWeight: "500",
   margin: 0,
   padding: 0,
+  transition: ".35s",
   "@media screen and (min-width: 550px)": {
     letterSpacing: "0.125vw",
     fontSize: "2.5vw"
@@ -67,6 +69,7 @@ const SectionTitle = styled.h3(({ theme }) => ({
   fontWeight: "500",
   margin: 0,
   padding: 0,
+  transition: ".35s",
   "@media screen and (min-width: 550px)": {
     letterSpacing: "2.88px",
     fontSize: "48px"
@@ -81,10 +84,11 @@ const SectionBody = styled.p(({ theme }) => ({
   fontWeight: "400",
   margin: 0,
   padding: 0,
+  transition: ".35s",
   "@media screen and (min-width: 550px)": {
     letterSpacing: "1.44px",
     fontSize: "24px",
-    fontWeight: "300"
+    fontWeight: "400"
   }
 }));
 
@@ -96,7 +100,11 @@ const CardButton = styled.p(({ theme }) => ({
   fontSize: "14px",
   fontWeight: "600",
   margin: 0,
-  padding: 0
+  padding: 0,
+  transition: ".35s",
+  "@media screen and (min-width: 550px)": {
+    fontSize: "16px"
+  }
 }));
 
 const CardName = styled.h3(({ theme }) => ({
@@ -107,6 +115,7 @@ const CardName = styled.h3(({ theme }) => ({
   fontWeight: "500",
   margin: 0,
   padding: 0,
+  transition: ".35s",
   "@media screen and (min-width: 550px)": {
     letterSpacing: "1.92px",
     fontSize: "32px"
@@ -121,6 +130,7 @@ const CardTitle = styled.h3(({ theme }) => ({
   fontWeight: "500",
   margin: 0,
   padding: 0,
+  transition: ".35s",
   "@media screen and (min-width: 550px)": {
     letterSpacing: "0.96px",
     fontSize: "16px"
@@ -135,6 +145,7 @@ const NavCopy = styled.p(({ theme }) => ({
   fontWeight: "500",
   margin: 0,
   padding: 0,
+  transition: ".35s",
   "&.active": {
     color: theme.palette.primary
   },
@@ -155,6 +166,7 @@ const LogoCopy = styled.h3(({ theme }) => ({
   fontWeight: "600",
   margin: 0,
   padding: 0,
+  transition: ".35s",
   "@media screen and (min-width: 550px)": {
     letterSpacing: "1.32px",
     fontSize: "22px"
@@ -168,7 +180,8 @@ const Subtitle = styled.h3(({ theme }) => ({
   fontSize: "18px",
   fontWeight: "500",
   margin: 0,
-  padding: 0
+  padding: 0,
+  transition: ".35s"
 }));
 
 const Body = styled.h3(({ theme }) => ({
@@ -179,6 +192,7 @@ const Body = styled.h3(({ theme }) => ({
   fontWeight: "400",
   margin: 0,
   padding: 0,
+  transition: ".35s",
   "@media screen and (min-width: 680px)": {
     letterSpacing: "1.2px",
     fontSize: "18px"
@@ -192,7 +206,8 @@ const Tiny = styled.h3(({ theme }) => ({
   fontSize: "10px",
   fontWeight: "500",
   margin: 0,
-  padding: 0
+  padding: 0,
+  transition: ".35s"
 }));
 
 export const defaultVariantMapping: { [key in TypographyType]: any } = {

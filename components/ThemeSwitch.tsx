@@ -31,7 +31,7 @@ const SwitchStyle = styled.label(({ theme }) => ({
     bottom: 0,
     borderRadius: "14px",
     backgroundColor: theme.palette.white,
-    transition: ".4s",
+    transition: ".35s",
     "& span": {
       position: "absolute",
       height: "20px",
@@ -40,7 +40,7 @@ const SwitchStyle = styled.label(({ theme }) => ({
       top: "4px",
       borderRadius: "10px",
       backgroundColor: theme.palette.primary,
-      transition: ".4s"
+      transition: ".35s"
     }
   }
 }));

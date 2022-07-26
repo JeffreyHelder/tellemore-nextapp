@@ -24,7 +24,8 @@ const StyledHeader = styled.header(({ theme }) => ({
   padding: "20px 40px",
   background: rgba(theme.palette.background, 0.95),
   backdropFilter: "blur(12px)",
-  zIndex: 1000,
+  zIndex: 999,
+  transition: ".35s",
   "& .header-inner-container": {
     maxWidth: "1640px",
     width: "100%",

@@ -41,6 +41,9 @@ const ContactCardStyle = styled.div(({ theme }) => ({
     alignItems: "center",
     width: "min-content",
     margin: "0 auto",
+    "& .contact-card-button-group": {
+      marginTop: "10px"
+    },
     "& .contact-card-image": {
       position: "relative",
       display: "flex",
