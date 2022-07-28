@@ -4,7 +4,7 @@ import Image from "next/image";
 import Typography from "./Typography";
 import logo from "../public/logo.png";
 import styled from "styled-components";
-import rgba from "../styles/functions/rgba";
+import { rgba } from "../styles/functions/manipulateColors";
 import ThemeSwitch from "./ThemeSwitch";
 import { useRouter } from "next/router";
 

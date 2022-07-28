@@ -127,12 +127,12 @@ const CardTitle = styled.h3(({ theme }) => ({
   lineHeight: 1,
   letterSpacing: "0.84px",
   fontSize: "14px",
-  fontWeight: "500",
+  fontWeight: "400",
   margin: 0,
   padding: 0,
   transition: ".35s",
   "@media screen and (min-width: 550px)": {
-    letterSpacing: "0.96px",
+    letterSpacing: "0.96",
     fontSize: "16px"
   }
 }));

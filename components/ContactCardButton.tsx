@@ -1,7 +1,7 @@
 import * as React from "react";
 import Ripples from "react-ripples";
 import styled from "styled-components";
-import rgba from "../styles/functions/rgba";
+import { rgba } from "../styles/functions/manipulateColors";
 import Typography from "./Typography";
 
 type ButtonProps = {
