@@ -79,7 +79,9 @@ export const PORT_ITEMS = [
     title: "Geometric Background",
     imageUrl: "/portfolio/geometric_background.jpg",
     tag: "web",
-    description: "Geometric background."
+    description: "Geometric background.",
+    linkName: "Github",
+    link: "https://github.com/JeffreyHelder/tellemore-nextapp"
   },
   {
     title: "Motion",

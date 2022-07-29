@@ -5,6 +5,7 @@ import DropDown from "../components/DropDown";
 import Helmet from "../components/Head";
 import SectionHeader from "../components/SectionHeader";
 import WorksCard from "../components/WorksCard";
+import WorksModal from "../components/WorksModal";
 import { PORT_ITEMS } from "../lib/MockData";
 
 const PageWrapper = styled.div(({}) => ({
@@ -29,9 +30,12 @@ const WorksWrapper = styled.div(({}) => ({
   }
 }));
 
-const Work: NextPage = () => {
+const Work: NextPage = ({ isMobile }: any) => {
   const [filter, setFilter] = useState("");
   const [filteredWorks, setFilteredWorks] = useState(PORT_ITEMS);
+
+  const [openModal, setOpenModal] = useState(false);
+  const [selectedWork, setSelectedWork] = useState(Number);
 
   const handleFilterChange = () => {
     switch (filter) {
@@ -48,11 +52,33 @@ const Work: NextPage = () => {
     }
   };
 
+  const handleOpenWorks = (idx: number) => {
+    if (isMobile) {
+      return;
+    } else {
+      setSelectedWork(idx);
+      setOpenModal(true);
+    }
+  };
+
+  useEffect(() => {
+    if (openModal) {
+      document.body.style.overflow = "hidden";
+    } else if (!openModal) {
+      document.body.style.overflow = "unset";
+    }
+  }, [openModal]);
+
   useEffect(() => {
     handleFilterChange();
   }, [filter]);
 
-  console.log("portfolio");
+  useEffect(() => {
+    if (isMobile) {
+      setOpenModal(false);
+    }
+  }, [isMobile]);
+
   return (
     <div>
       <Helmet title="Tellemore | Work" description="Jeffrey Helder's work portfolio" />
@@ -60,19 +86,22 @@ const Work: NextPage = () => {
         <SectionHeader title="works" />
         <DropDown title="Filters" options={["web", "graphics", "motion", "3d"]} onClick={i => setFilter(i)} selected={filter} />
         <WorksWrapper>
-          {filteredWorks.map(item => (
+          {filteredWorks.map((item, idx) => (
             <WorksCard
               key={item.title}
               onClick={() => {
-                console.log("clicked:", item.title);
+                handleOpenWorks(idx + 1);
               }}
               title={item.title}
               imageUrl={item.imageUrl}
               description={item.description}
+              link={item.link}
+              linkName={item.linkName}
             />
           ))}
         </WorksWrapper>
       </PageWrapper>
+      {!isMobile && openModal && selectedWork && <WorksModal handleOnClose={() => setOpenModal(false)} works={filteredWorks} index={selectedWork} />}
     </div>
   );
 };

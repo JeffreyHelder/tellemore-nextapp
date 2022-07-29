@@ -9,6 +9,8 @@ type HomeCardProps = {
   title: string;
   imageUrl: string;
   description: string;
+  link?: string;
+  linkName?: string;
 };
 
 const HomeCardStyle = styled.div(({ theme }) => ({
@@ -49,7 +51,7 @@ const HomeCardStyle = styled.div(({ theme }) => ({
     background: `linear-gradient(180deg, ${rgba(theme.palette.black, 0.3)} 52.33%, ${rgba(theme.palette.black, 0.8)} 92.33%)`,
     opacity: 0,
     transition: ".3s",
-    "& >* a": {
+    "& >a>*, >a": {
       textDecoration: "none",
       color: theme.palette.blue,
       "&:hover": {
@@ -74,10 +76,15 @@ const HomeCardStyle = styled.div(({ theme }) => ({
   }
 }));
 
-const WorksCard = ({ onClick, title, imageUrl, description }: HomeCardProps) => (
+const WorksCard = ({ onClick, title, imageUrl, description, link, linkName }: HomeCardProps) => (
   <HomeCardStyle onClick={() => onClick()}>
     <div className="works-card-info-layer">
       <Typography type="CardTitle">{title}</Typography>
+      {link && (
+        <a href={link} target="_blank" rel="noreferrer">
+          <Typography type="CardTitle">{linkName}</Typography>
+        </a>
+      )}
     </div>
     <Image width="800" height="800" src={imageUrl} alt={description} />
   </HomeCardStyle>
