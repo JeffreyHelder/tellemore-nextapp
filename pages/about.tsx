@@ -63,7 +63,7 @@ const About: NextPage = ({ isMobile }: any) => (
             I enjoy making single-page webapps, working with vector graphics, simple motion graphics, 3d productions, and learning new media skills.
           </Typography>
         </div>
-        <Image width={isMobile ? "82px" : "165px"} height={isMobile ? "145px" : "291px"} src={AboutProfile} alt="jeffrey helder image" />
+        <Image priority width={isMobile ? "82px" : "165px"} height={isMobile ? "145px" : "291px"} src={AboutProfile} alt="jeffrey helder image" />
       </AboutWrapper>
       <AboutVideoWrapper>
         <div className="about-video-inner-container">

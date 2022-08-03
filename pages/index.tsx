@@ -3,6 +3,8 @@ import Helmet from "../components/Head";
 import Typography from "../components/Typography";
 import styled from "styled-components";
 import HomeCard from "../components/HomeCards";
+import Bars from "../components/Bars";
+import BarContainer from "../components/BarsContainer";
 
 const TitleWrapper = styled.div(() => ({
   padding: "60px 0 0 100px",
@@ -48,6 +50,17 @@ const Home: NextPage = () => (
         </HomeCard>
       </CardContainer>
     </TitleWrapper>
+    <BarContainer>
+      <Bars color="purple" />
+      <Bars color="primary" />
+      <Bars color="blue" />
+      <Bars color="purple" />
+      <Bars color="primary" />
+      <Bars color="blue" />
+      <Bars color="purple" />
+      <Bars color="primary" />
+      <Bars color="blue" />
+    </BarContainer>
   </>
 );
 
