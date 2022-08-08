@@ -8,7 +8,7 @@ type BarContainerProps = {
 const BarContainerStyles = styled.div(({ theme }) => ({
   position: "fixed",
   bottom: 0,
-  left: "90%",
+  left: "80%",
   zIndex: 0,
   display: "flex",
   flexDirection: "column",
